@@ -20,3 +20,8 @@ scalacOptions ++= Seq(
   "-unchecked",
   "-Ywarn-value-discard"
 )
+
+libraryDependencies ++= Seq(
+  "org.scalacheck" %% "scalacheck" % "1.15.4" % Test,
+  "org.scalatest" %% "scalatest-funsuite" % "3.2.11" % Test
+)
