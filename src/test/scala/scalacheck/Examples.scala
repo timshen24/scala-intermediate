@@ -4,8 +4,6 @@ import org.scalacheck.Gen
 import org.scalatest.funsuite.AnyFunSuite
 import org.scalacheck.Prop.forAll
 
-import scala.util.Try
-
 class Examples extends AnyFunSuite {
   test("Invoking head on an empty Set should produce NoSuchElementException") {
     assertThrows[NoSuchElementException] {
@@ -17,7 +15,6 @@ class Examples extends AnyFunSuite {
     forAll { (l1: List[Int], l2: List[Int]) =>
       l1.size + l2.size == (l1 ::: l2).size }
   }
-
 
   def httpTypeGen: Gen[String] = Gen.oneOf(Seq("http", "https"))
   def domainGen: Gen[String] = Gen.nonEmptyListOf(Gen.alphaNumStr).map(_.mkString("."))
@@ -59,5 +56,12 @@ class Examples extends AnyFunSuite {
     accNumber <- accountNumberGen
     balance <- balanceGen
   } yield Account(accNumber, balance)
+
+  test("urlGen should have positive length") {
+    forAll(urlGen) {
+      url => url.nonEmpty
+    }
+  }
+
 }
 
