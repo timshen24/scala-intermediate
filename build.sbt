@@ -17,8 +17,7 @@ scalacOptions ++= Seq(
   "UTF-8",
   "-language:existentials",
   "-language:postfixOps",
-  "-unchecked",
-  "-Ywarn-value-discard"
+  "-unchecked"
 )
 
 libraryDependencies ++= Seq(
