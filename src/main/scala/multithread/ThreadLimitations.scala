@@ -21,16 +21,16 @@ object ThreadLimitations extends App {
     def getAmount: Int = amount
   }
 
-//  val account = new BankAccount(2000)
-//  for (_ <- 1 to 2000) {
-//    new Thread(() => account.withdraw(1)).start()
-//  }
-//
-//  for (_ <- 1 to 2000) {
-//    new Thread(() => account.deposit(1)).start()
-//  }
+  val account = new BankAccount(2000)
+  for (_ <- 1 to 2000) {
+    new Thread(() => account.withdraw(1)).start()
+  }
 
-//  println(account.getAmount)
+  for (_ <- 1 to 2000) {
+    new Thread(() => account.deposit(1)).start()
+  }
+
+  println(account.getAmount)
 
   // OOP encapsulation is broken in a multithreaded env
   // synchronization! Locks to the rescue
