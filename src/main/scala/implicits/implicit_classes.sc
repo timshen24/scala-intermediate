@@ -10,7 +10,7 @@ case class Coordinate(latitude: Double, longitude: Double)
 
 //object Coordinate {
   implicit class Ops2(latLong: (Double, Double)) {
-    def toCoordinate: Coordinate = new Coordinate(latLong._1,
+    def toCoordinate: Coordinate = Coordinate(latLong._1,
       latLong._2)
   }
 //}

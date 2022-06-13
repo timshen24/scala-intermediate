@@ -8,7 +8,7 @@ import scala.util.*
 println("Step 1: Define a method which returns a Future")
 import scala.concurrent.ExecutionContext.Implicits.global
 def donutStock(donut: String): Int = {
-  if(donut == "vanilla donut") 10
+  if (donut == "vanilla donut") 10
   else throw new IllegalStateException("Out of stock")
 }
 
