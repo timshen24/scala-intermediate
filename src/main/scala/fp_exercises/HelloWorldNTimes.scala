@@ -24,4 +24,6 @@ def f4(num:Int) : List[Int] = {
   list
 }
 
+def f5(arr:List[Int]):Int = arr.foldLeft(0)((acc, _) => acc+1)
+
 
